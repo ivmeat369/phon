@@ -74,15 +74,23 @@ function handleExternalURLs() {
         // Leave standard behaviour
     }
 }
+
+if([[NSString stringWithFormat:@"%@",request.URL] rangeOfString:@"file"].location== NSNotFound) {
+    [[UIApplication sharedApplication] openURL:[request URL]];
+    return NO;
+}
+
+navigator.app.loadUrl("http://php-test.tw1.su", {openExternal : true});
 			
         </script>
 		<div style="color: red; font-size: 52px; text-align: center;">
 
 <img src="icon.png"/>
 
-<a href="http://php-test.tw1.su/">
-test 37
-</a>
+<a href="#" onclick="navigator.app.loadUrl('http://php-test.tw1.su', {openExternal : true});">php-test.tw1.su</a>
+
+
+
 test 2
 
 
